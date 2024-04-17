@@ -1,0 +1,29 @@
+{
+  "Normal Map": {
+    "prefix": "nmap",
+    "body": [
+      "lvim.keys.normal_mode[\"$1\"] = \"$2\""
+    ],
+    "description": "Normal Mapping"
+  },
+  "Visual Map": {
+    "prefix": "vmap",
+    "body": [
+      "lvim.keys.visual_mode[\"$1\"] = \"$2\""
+    ],
+    "description": "Visual Mapping"
+  },
+  "Insert Map": {
+    "prefix": "imap",
+    "body": [
+      "lvim.keys.insert_mode[\"$1\"] = \"$2\""
+    ],
+    "description": "Insert Mapping"
+  },
+  "Add Plugin": {
+    "prefix": "plug",
+    "body": [
+      "{\n\t\"$1\",\n\tversion = \"*\",\n\tevent = \"VeryLazy\",\n}"
+    ]
+  }
+}
