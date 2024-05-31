@@ -10,6 +10,13 @@ vim.diagnostic.config({ virtual_text = false })
 
 lvim.reload_config_on_save = true
 
+-- auto-reload files when modified externally
+-- https://unix.stackexchange.com/a/383044
+vim.o.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = { "*" },
+})
 --
 --
 -- Remapeamento de atalhos
@@ -27,40 +34,37 @@ my_themes.load()
 
 --
 -- Begin Lsp Config's
---
 local lsp_configs = require("lsp-configs")
 lsp_configs.load()
---
 -- End Lsp Config's
 
 -- Begin Codeium config
---
 local codeium_config = require('codeium-config')
 codeium_config.load()
---
 -- End Codeium config
 --
 -- Begin ToggleTerm config
---
 local terminal_config = require("terminal-config")
 terminal_config.load()
---
 -- End ToggleTerm config
 
 -- Begin lualine config
---
 local lualine_config = require("lualine-config")
 lualine_config.load()
---
 -- End lualine config
 --
 -- Begin swenv config
 --
-local swenv_config = require("swenv-config")
-swenv_config.load()
+-- local swenv_config = require("swenv-config")
+-- swenv_config.load()
 --
 -- End swenv config
 -- Begin autocommands
 -- local my_autocommands = require('my-autocommands')
 -- my_autocommands.load()
 -- End autocommands
+--
+-- Begin nvim-tree config
+-- local nvim_tree_config = require("nvim-tree-config")
+-- nvim_tree_config.load()
+-- End nvim-tree config

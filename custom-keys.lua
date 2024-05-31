@@ -1,11 +1,5 @@
 return {
   load = function()
-    lvim.builtin.which_key.mappings["l"]["f"] = {
-      function()
-        require("lvim.lsp.utils").format { timeout_ms = 2000 }
-      end,
-      "Format",
-    }
     lvim.keys.normal_mode["<S-h>"] = false
     lvim.keys.normal_mode["<S-h>"] = "<Cmd>BufferLineCyclePrev<CR>"
     lvim.keys.normal_mode["<S-l>"] = false
@@ -27,5 +21,8 @@ return {
     lvim.keys.insert_mode["<C-j>"] = "<Down>"
     lvim.keys.insert_mode["<M-;>"] = "<Cmd>call codeium#CycleOrComplete()<CR>"
     lvim.keys.insert_mode["<M-x>"] = "<Cmd>call codeium#Clear()<CR>"
+    lvim.keys.insert_mode["<Tab>"] = False
+    lvim.keys.insert_mode["<Tab>"] = "<Tab>"
+    lvim.keys.insert_mode["<S-Tab>"] = "<Cmd>call codeium#Accept()<CR>"
   end
 }

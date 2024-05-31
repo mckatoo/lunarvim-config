@@ -63,6 +63,10 @@ return {
           overrides = {},           -- add custom overrides
         }
       },
+      {
+        "rebelot/kanagawa.nvim",
+        lazy = false
+      },
       -- Markdown Preview
       {
         "iamcco/markdown-preview.nvim",
@@ -81,8 +85,10 @@ return {
       },
       {
         "AckslD/swenv.nvim",
+      },
+      {
         "stevearc/dressing.nvim",
-      }
+      },
     }
   end
 }
