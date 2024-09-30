@@ -3,8 +3,8 @@ return {
     lvim.plugins = {
       {
         "mg979/vim-visual-multi",
-        version = "*",
-        event = "VeryLazy",
+        -- version = "*",
+        -- event = "VeryLazy",
       },
       {
         "kylechui/nvim-surround",
@@ -76,10 +76,10 @@ return {
           vim.g.mkdp_auto_start = 1
         end,
       },
-      {
-        'Exafunction/codeium.vim',
-        event = 'BufEnter',
-      },
+      -- {
+      --   'Exafunction/codeium.vim',
+      --   event = 'BufEnter',
+      -- },
       {
         'kabbamine/vcoolor.vim',
       },

@@ -13,6 +13,7 @@ return {
     lvim.keys.normal_mode["<M-Up>"] = "<Cmd>horizontal resize +2<CR>"
     lvim.keys.normal_mode["<M-Down>"] = "<Cmd>horizontal resize -2<CR>"
     lvim.keys.normal_mode["C"] = "<Cmd>lua require('swenv.api').pick_venv()<CR>"
+    lvim.keys.normal_mode["<C-t>"] = "<Cmd>ToggleTerm direction=horizontal size=5<CR>"
 
     lvim.keys.insert_mode["jk"] = "<esc>"
     lvim.keys.insert_mode["<C-l>"] = "<Right>"
@@ -24,5 +25,6 @@ return {
     lvim.keys.insert_mode["<Tab>"] = False
     lvim.keys.insert_mode["<Tab>"] = "<Tab>"
     lvim.keys.insert_mode["<S-Tab>"] = "<Cmd>call codeium#Accept()<CR>"
+    lvim.keys.insert_mode["<C-o>"] = "<ESC>o"
   end
 }

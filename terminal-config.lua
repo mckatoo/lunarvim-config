@@ -9,7 +9,7 @@ return {
       --     return vim.o.columns * 0.4
       --   end
       -- end,
-      open_mapping = [[<c-\>]],
+      -- open_mapping = [[<c-\>]],
       -- on_create = function(terminal)
       --   print('ON CREATE')
       -- end, -- function to run when the terminal is first created
