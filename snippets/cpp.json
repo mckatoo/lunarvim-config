@@ -1,0 +1,14 @@
+{
+  "MSTest Method": {
+    "prefix": "hpp",
+    "body": [
+      "#ifndef $1",
+      "#define $1",
+      "",
+      "$2",
+      "",
+      "#endif"
+    ],
+    "description": "Log output to console"
+  }
+}
