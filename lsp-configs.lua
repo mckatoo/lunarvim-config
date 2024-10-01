@@ -1,3 +1,6 @@
+---@diagnostic disable: undefined-global
+local lspconfig = require('lspconfig')
+
 lvim.builtin.which_key.mappings["l"]["f"] = {
   function()
     require("lvim.lsp.utils").format { timeout_ms = 5000 }
@@ -5,16 +8,12 @@ lvim.builtin.which_key.mappings["l"]["f"] = {
   "Format",
 }
 
--- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright", "jedi-language-server" })
--- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
---   return server ~= "ruff-lsp"
--- end, lvim.lsp.automatic_configuration.skipped_servers)
 require("lvim.lsp.manager").setup("ruff_lsp")
 local on_attach = function(client, bufnr)
   client.server_capabilities.hoverProvider = false
 end
 
-require('lspconfig').ruff_lsp.setup {
+lspconfig.ruff_lsp.setup {
   on_attach = on_attach,
 }
 
@@ -24,12 +23,6 @@ return {
     local linters = require "lvim.lsp.null-ls.linters"
 
     linters.setup {
-      -- {
-      --   command = "flake8",
-      --   filetypes = {
-      --     "python"
-      --   }
-      -- },
       {
         command = "eslint",
         filetypes = {
@@ -42,22 +35,6 @@ return {
       },
     }
     formatters.setup {
-      -- {
-      --   command = "autoflake",
-      --   args = {
-      --     "--remove-unused-variables",
-      --     "--remove-all-unused-imports",
-      --   },
-      --   filetypes = {
-      --     "python"
-      --   }
-      -- },
-      -- {
-      --   command = "black",
-      --   filetypes = {
-      --     "python"
-      --   }
-      -- },
       {
         command = "eslint",
         filetypes = {
@@ -68,12 +45,28 @@ return {
           "vue"
         },
       },
-
     }
-    require 'lspconfig'.bashls.setup {
+
+    lspconfig.jsonls.setup {
+      filetypes = { 'json', 'jsonc' }
+    }
+
+    lspconfig.bashls.setup {
       filetypes = { 'sh', 'zsh', },
     }
-    require 'lspconfig'.pyright.setup {
+
+    lspconfig.clangd.setup({
+      cmd = { 'clangd', '--background-index', '--clang-tidy', '--log=verbose' },
+      init_options = {
+        fallbackFlags = { '-std=c++17' },
+      },
+    })
+
+    lspconfig.lua_ls.setup({
+      filetypes = { 'lua' }
+    })
+
+    lspconfig.pyright.setup {
       capabilities = {
         workspace = {
           applyEdit = true,
