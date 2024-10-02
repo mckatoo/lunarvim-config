@@ -1,6 +1,6 @@
 {
   "MSTest Method": {
-    "prefix": "hpp",
+    "prefix": "#ifndef",
     "body": [
       "#ifndef $1",
       "#define $1",

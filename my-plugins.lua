@@ -3,8 +3,8 @@ return {
     lvim.plugins = {
       {
         "mg979/vim-visual-multi",
-        -- version = "*",
-        -- event = "VeryLazy",
+        version = "*",
+        event = "VeryLazy",
       },
       {
         "kylechui/nvim-surround",
