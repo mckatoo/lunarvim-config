@@ -1,5 +1,2 @@
-return {
-  load = function()
-    vim.g.codeium_manual = true
-  end
-}
+---@diagnostic disable: undefined-global
+vim.g.codeium_manual = true

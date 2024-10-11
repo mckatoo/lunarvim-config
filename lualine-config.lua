@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local function get_venv_status()
   local VIRTUAL_ENV = os.getenv("VIRTUAL_ENV")
   local venv_status = "venv  "
@@ -32,12 +33,8 @@ local function codeium_status()
 end
 
 
-return {
-  load = function()
-    lvim.builtin.lualine.sections.lualine_b = {
-      get_poetry_status,
-      get_venv_status,
-      codeium_status
-    }
-  end
+lvim.builtin.lualine.sections.lualine_b = {
+  get_poetry_status,
+  get_venv_status,
+  codeium_status
 }
