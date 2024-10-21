@@ -1,10 +1,16 @@
 ---@diagnostic disable: undefined-global
 
-function xmake_config_generate()
-  vim.cmd "silent !xmake project --kind=compile_commands --lsp=clang -y"
-  vim.cmd "silent !xmake project --kind=cmakelists -y"
+local async = require('plenary.async')
+xmake_config_generate = async.void(function()
+  print("creating...")
+  async.void(function()
+    vim.cmd "silent !xmake project --kind=compile_commands --lsp=clang -y"
+  end)()
+  async.void(function()
+    vim.cmd "silent !xmake project --kind=cmakelists -y"
+  end)()
   print("xmake config files created!")
-end
+end)
 
 lvim.autocommands = {
   {
@@ -26,7 +32,6 @@ lvim.autocommands = {
     {
       pattern = { "xmake.lua" },
       command = "lua xmake_config_generate()"
-      -- command = "!xmake project --kind=compile_commands --lsp=clang"
     }
   }
 }
