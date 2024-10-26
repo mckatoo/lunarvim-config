@@ -8,6 +8,8 @@
 -- Fix visual-mult
 -- set nocompatible
 vim.g.nocompatible = true
+vim.o.timeoutlen = 500 -- key timeout default = 1000
+vim.o.updatetime = 700 -- stoped cursor default = 4000
 -- set nowrapscan
 -- vim.g.nowrapscan = true
 
