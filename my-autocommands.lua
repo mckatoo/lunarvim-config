@@ -6,7 +6,30 @@ function xmake_config_generate()
   print("xmake config files created!")
 end
 
+local show_diagnostics = function()
+  local opts = {
+    focusable = false,
+    close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+    border = "rounded",
+    source = "always",
+    prefix = " ",
+    scope = "cursor",
+  }
+  vim.diagnostic.open_float(nil, opts)
+end
+
+-- Configurar evento para chamar a fun‡Æo ao manter o cursor sobre uma linha
+-- vim.api.nvim_create_autocmd("CursorHold", {
+--   callback = show_diagnostics
+-- })
+
 lvim.autocommands = {
+  {
+    "CursorHold",
+    {
+      callback = show_diagnostics
+    }
+  },
   {
     "BufEnter",
     {
