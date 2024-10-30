@@ -17,32 +17,14 @@ lspconfig.ruff_lsp.setup {
   on_attach = on_attach,
 }
 
-local formatters = require "lvim.lsp.null-ls.formatters"
-local linters = require "lvim.lsp.null-ls.linters"
-
-linters.setup {
-  {
-    command = "eslint",
-    filetypes = {
-      "javascriptreact",
-      "javascript",
-      "typescriptreact",
-      "typescript",
-      "vue"
-    },
-  },
-}
-formatters.setup {
-  {
-    command = "eslint",
-    filetypes = {
-      "javascriptreact",
-      "javascript",
-      "typescriptreact",
-      "typescript",
-      "vue"
-    },
-  },
+lspconfig.tsserver.setup {
+  filetypes = {
+    "javascriptreact",
+    "javascript",
+    "typescriptreact",
+    "typescript",
+    "vue"
+  }
 }
 
 lspconfig.jsonls.setup {
