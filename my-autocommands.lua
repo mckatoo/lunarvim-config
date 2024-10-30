@@ -2,6 +2,7 @@
 
 function xmake_config_generate()
   vim.cmd "silent !nohup xmake project --kind=compile_commands --lsp=clang -y &"
+  vim.cmd "silent !nohup xmake project --kind=compile_flags --lsp=clang -y &"
   vim.cmd "silent !nohup xmake project --kind=cmakelists -y &"
   print("xmake config files created!")
 end
