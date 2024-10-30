@@ -17,9 +17,7 @@ lvim.keys.normal_mode["<Leader>q"] = false
 lvim.keys.normal_mode["<Leader>q"] = ":qa<CR>"
 lvim.keys.normal_mode["<leader>e"] = false
 lvim.keys.normal_mode["<leader>e"] = ":NeoTreeShowToggle"
--- lvim.keys.normal_mode["s"] = require('substitute').operator
--- lvim.keys.normal_mode["ss"] = require('substitute').line
--- lvim.keys.normal_mode["S"] = require('substitute').eol
+lvim.keys.normal_mode["gd"] = ":lua vim.lsp.buf.definition()<CR>"
 
 lvim.keys.insert_mode["jk"] = "<esc>"
 lvim.keys.insert_mode["<C-l>"] = "<Right>"
