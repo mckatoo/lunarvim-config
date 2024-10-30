@@ -1,10 +1,26 @@
 ---@diagnostic disable: undefined-global
 lvim.plugins = {
-  {
-    "mg979/vim-visual-multi",
-    version = "*",
-    event = "VeryLazy",
-  },
+  -- {
+  --   "mg979/vim-visual-multi",
+  --   version = "*",
+  --   event = "VeryLazy",
+  -- },
+  -- {
+  --   "terryma/vim-multiple-cursors",
+  --   version = "*",
+  --   event = "VeryLazy",
+  --   config = function()
+  --     vim.g.multi_cursor_use_default_mapping = 0
+  --     vim.g.multi_cursor_start_word_key      = '<C-n>'
+  --     vim.g.multi_cursor_select_all_word_key = '<A-n>'
+  --     vim.g.multi_cursor_start_key           = 'g<C-n>'
+  --     vim.g.multi_cursor_select_all_key      = 'g<A-n>'
+  --     vim.g.multi_cursor_next_key            = '<C-n>'
+  --     vim.g.multi_cursor_prev_key            = '<C-p>'
+  --     vim.g.multi_cursor_skip_key            = '<C-x>'
+  --     vim.g.multi_cursor_quit_key            = '<Esc>'
+  --   end
+  -- },
   {
     "kylechui/nvim-surround",
     version = "*",
@@ -58,8 +74,8 @@ lvim.plugins = {
     "comfysage/evergarden",
     opts = {
       transparent_background = true,
-      contrast_dark = "medium",     -- 'hard'|'medium'|'soft'
-      overrides = {},               -- add custom overrides
+      contrast_dark = "medium", -- 'hard'|'medium'|'soft'
+      overrides = {},           -- add custom overrides
     }
   },
   {
