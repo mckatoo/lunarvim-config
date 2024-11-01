@@ -1,26 +1,22 @@
 ---@diagnostic disable: undefined-global
 lvim.plugins = {
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   version = "*",
-  --   event = "VeryLazy",
-  -- },
-  -- {
-  --   "terryma/vim-multiple-cursors",
-  --   version = "*",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     vim.g.multi_cursor_use_default_mapping = 0
-  --     vim.g.multi_cursor_start_word_key      = '<C-n>'
-  --     vim.g.multi_cursor_select_all_word_key = '<A-n>'
-  --     vim.g.multi_cursor_start_key           = 'g<C-n>'
-  --     vim.g.multi_cursor_select_all_key      = 'g<A-n>'
-  --     vim.g.multi_cursor_next_key            = '<C-n>'
-  --     vim.g.multi_cursor_prev_key            = '<C-p>'
-  --     vim.g.multi_cursor_skip_key            = '<C-x>'
-  --     vim.g.multi_cursor_quit_key            = '<Esc>'
-  --   end
-  -- },
+  {
+    'mg979/vim-visual-multi',
+    init = function()
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'visual_multi_start',
+        callback = function()
+          pcall(vim.keymap.del, 'i', '<BS>', { buffer = 0 })
+        end,
+      })
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'visual_multi_exit',
+        callback = function()
+          require('nvim-autopairs').force_attach()
+        end,
+      })
+    end,
+  },
   {
     "kylechui/nvim-surround",
     version = "*",
@@ -69,18 +65,6 @@ lvim.plugins = {
     name = "nightfly",
     lazy = false,
     priority = 1000
-  },
-  {
-    "comfysage/evergarden",
-    opts = {
-      transparent_background = true,
-      contrast_dark = "medium", -- 'hard'|'medium'|'soft'
-      overrides = {},           -- add custom overrides
-    }
-  },
-  {
-    "rebelot/kanagawa.nvim",
-    lazy = false
   },
   -- Markdown Preview
   {
