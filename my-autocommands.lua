@@ -15,14 +15,12 @@ local show_diagnostics = function()
     source = "always",
     prefix = " ",
     scope = "cursor",
+    float = { border = 'rounded' },
   }
-  vim.diagnostic.open_float(nil, opts)
+  if not vim.diagnostic.open_float(nil, opts) then
+    vim.lsp.buf.hover()
+  end
 end
-
--- Configurar evento para chamar a fun‡Æo ao manter o cursor sobre uma linha
--- vim.api.nvim_create_autocmd("CursorHold", {
---   callback = show_diagnostics
--- })
 
 lvim.autocommands = {
   {
@@ -51,5 +49,5 @@ lvim.autocommands = {
       pattern = { "xmake.lua" },
       command = "lua xmake_config_generate()"
     }
-  }
+  },
 }
