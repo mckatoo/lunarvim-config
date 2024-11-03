@@ -1,5 +1,5 @@
 ---@diagnostic disable: undefined-global
-lvim.plugins = {
+vim.list_extend(lvim.plugins, {
   {
     'mg979/vim-visual-multi',
     init = function()
@@ -53,10 +53,6 @@ lvim.plugins = {
     lazy = false,
   },
   {
-    "nyoom-engineering/oxocarbon.nvim",
-    lazy = false,
-  },
-  {
     "rafamadriz/neon",
     lazy = false
   },
@@ -66,7 +62,6 @@ lvim.plugins = {
     lazy = false,
     priority = 1000
   },
-  -- Markdown Preview
   {
     "iamcco/markdown-preview.nvim",
     build = "cd app && npm install",
@@ -75,10 +70,6 @@ lvim.plugins = {
       vim.g.mkdp_auto_start = 1
     end,
   },
-  -- {
-  --   'Exafunction/codeium.vim',
-  --   event = 'BufEnter',
-  -- },
   {
     'kabbamine/vcoolor.vim',
   },
@@ -88,4 +79,4 @@ lvim.plugins = {
   {
     "stevearc/dressing.nvim",
   },
-}
+})
