@@ -15,12 +15,11 @@ lvim.keys.normal_mode["C"] = "<Cmd>lua require('swenv.api').pick_venv()<CR>"
 lvim.keys.normal_mode["<C-t>"] = "<Cmd>ToggleTerm direction=horizontal size=5<CR>"
 lvim.keys.normal_mode["<Leader>q"] = false
 lvim.keys.normal_mode["<Leader>q"] = ":qa<CR>"
-lvim.keys.normal_mode["<leader>e"] = false
-lvim.keys.normal_mode["<leader>e"] = ":NeoTreeShowToggle"
 lvim.keys.normal_mode["gd"] = ":lua vim.lsp.buf.definition()<CR>"
 lvim.keys.normal_mode["gi"] = ":lua show_diagnostics_info()<CR>"
 
 lvim.keys.insert_mode["jk"] = "<esc>"
+lvim.keys.insert_mode["JK"] = "<esc>"
 lvim.keys.insert_mode["<C-l>"] = "<Right>"
 lvim.keys.insert_mode["<C-h>"] = "<Left>"
 lvim.keys.insert_mode["<C-k>"] = "<Up>"
