@@ -17,12 +17,6 @@ lvim.keys.normal_mode["<Leader>q"] = false
 lvim.keys.normal_mode["<Leader>q"] = ":qa<CR>"
 lvim.keys.normal_mode["gd"] = ":lua vim.lsp.buf.definition()<CR>"
 lvim.keys.normal_mode["gi"] = ":lua show_diagnostics_info()<CR>"
-lvim.keys.normal_mode["H"] = "<Left>"
-lvim.keys.normal_mode["J"] = "<Down>"
-lvim.keys.normal_mode["K"] = "<Up>"
-lvim.keys.normal_mode["L"] = "<Right>"
-lvim.keys.normal_mode["U"] = "u"
-lvim.keys.normal_mode["<C-R>"] = "r"
 
 lvim.keys.insert_mode["jk"] = "<esc>"
 lvim.keys.insert_mode["JK"] = "<esc>"
