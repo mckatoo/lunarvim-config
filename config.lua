@@ -6,6 +6,7 @@ vim.diagnostic.config({ virtual_text = false })
 lvim.reload_config_on_save = true
 vim.o.autoread = true
 vim.o.relativenumber = true
+vim.o.wrap = true
 
 require("utils")
 require("my-autocommands")
