@@ -9,9 +9,11 @@
       {
         "language": [
           "typescript",
-          "typescriptreact"
+          "typescriptreact",
+          "javascript",
+          "javascriptreact"
         ],
-        "path": "./typescript.json"
+        "path": "./javascript.json"
       },
       {
         "language": [

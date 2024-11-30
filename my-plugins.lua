@@ -1,5 +1,7 @@
 ---@diagnostic disable: undefined-global
 vim.list_extend(lvim.plugins, {
+  { "template-string.nvim" },
+  { "prisma/vim-prisma" },
   {
     "mg979/vim-visual-multi",
     branch = "master"
@@ -25,6 +27,7 @@ vim.list_extend(lvim.plugins, {
     config = function(plugin, opts)
       require("luasnip.loaders.from_vscode").lazy_load {
         paths = { "~/.config/lvim/snippets" },
+        fs_event_providers = { libuv = true, autocmd = true }
       }
     end,
   },
