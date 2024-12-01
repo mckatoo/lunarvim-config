@@ -767,5 +767,18 @@
       "",
       "export default $1"
     ]
+  },
+  "TypeORM entity": {
+    "prefix": "entity",
+    "body": [
+      "@Entity()",
+      "export class $1 {",
+      "\t@PrimaryGeneratedColumn()",
+      "\tid!: number",
+      "",
+      "\t@Column()",
+      "\t$2!: string ",
+      "}"
+    ]
   }
 }
