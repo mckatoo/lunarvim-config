@@ -1,5 +1,7 @@
 ---@diagnostic disable: undefined-global
 vim.list_extend(lvim.plugins, {
+  { "windwp/nvim-ts-autotag" },
+  { "norcalli/nvim-colorizer.lua" },
   { "template-string.nvim" },
   { "prisma/vim-prisma" },
   {
