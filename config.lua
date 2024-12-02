@@ -7,6 +7,7 @@ lvim.reload_config_on_save = true
 vim.o.autoread = true
 vim.o.relativenumber = true
 vim.o.wrap = true
+vim.o.timeoutlen = 200
 
 require("utils")
 require("my-autocommands")
