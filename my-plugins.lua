@@ -26,6 +26,7 @@ vim.list_extend(lvim.plugins, {
   },
   {
     "L3MON4D3/LuaSnip",
+    build = "make install_jsregexp",
     config = function(plugin, opts)
       require("luasnip.loaders.from_vscode").lazy_load {
         paths = { "~/.config/lvim/snippets" },
