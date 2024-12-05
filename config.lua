@@ -9,6 +9,12 @@ vim.o.relativenumber = true
 vim.o.wrap = true
 vim.o.timeoutlen = 200
 
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldcolumn = "1"
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 99
+
 require("utils")
 require("my-autocommands")
 require("custom-keys")
