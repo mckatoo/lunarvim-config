@@ -1,5 +1,15 @@
 ---@diagnostic disable: undefined-global
 vim.list_extend(lvim.plugins, {
+  {
+    'derektata/lorem.nvim',
+    config = function()
+      require('lorem').opts {
+        sentenceLength = "medium",
+        comma_chance = 0.2,
+        max_commas_per_sentence = 2,
+      }
+    end
+  },
   { "windwp/nvim-ts-autotag" },
   { "norcalli/nvim-colorizer.lua" },
   { "template-string.nvim" },
