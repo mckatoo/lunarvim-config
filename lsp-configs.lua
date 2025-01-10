@@ -17,6 +17,15 @@ lspconfig.ruff_lsp.setup {
   on_attach = on_attach,
 }
 
+local function organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = {vim.api.nvim_buf_get_name(0)},
+    title = ""
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
 lspconfig.tsserver.setup {
   filetypes = {
     "javascriptreact",
@@ -24,6 +33,12 @@ lspconfig.tsserver.setup {
     "typescriptreact",
     "typescript",
     "vue"
+  },
+  commands = {
+    OrganizeImports = {
+      organize_imports,
+      description = "Organize Imports"
+    }
   }
 }
 

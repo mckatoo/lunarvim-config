@@ -25,11 +25,6 @@ vim.list_extend(lvim.plugins, {
     config = function() require("nvim-surround").setup() end,
   },
   {
-    "ruanyl/vim-sort-imports",
-    version = "*",
-    event = "VeryLazy",
-  },
-  {
     "luochen1990/rainbow",
     version = "*",
     event = "VeryLazy",
