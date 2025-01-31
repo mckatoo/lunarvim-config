@@ -8,6 +8,7 @@ vim.o.autoread = true
 vim.o.relativenumber = true
 vim.o.wrap = true
 vim.o.timeoutlen = 200
+vim.opt.laststatus = 3
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
@@ -29,3 +30,4 @@ require("template-string-config")
 require("nvim-colorizer-config")
 require("nvim-ts-autotag-config")
 require("emmet-config")
+require("telescope-config")

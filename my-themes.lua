@@ -3,21 +3,29 @@ vim.list_extend(lvim.plugins, {
   {
     'projekt0n/github-nvim-theme',
     name = 'github-theme',
-    lazy = false,      -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000,   -- make sure to load this before all the other start plugins
+    lazy = false,
+    priority = 1000,
     config = function()
       require('github-theme').setup({
-        -- ...
       })
-
-      -- vim.cmd('colorscheme github_dark_tritanopia')
     end,
+  },
+  {
+    "rebelot/kanagawa.nvim"
+  },
+  {
+    "jackplus-xyz/binary.nvim"
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000
+  },
+  {
+    "NLKNguyen/papercolor-theme",
   }
-  -- {
-  --   "nyoom-engineering/oxocarbon.nvim",
-  --   lazy = false,
-  -- },
 })
 
-lvim.colorscheme = 'github_dark_tritanopia'
--- vim.g.neon_style = 'dark'
+-- lvim.colorscheme = 'github_dark_tritanopia'
+lvim.background = "dark"
+lvim.colorscheme = "PaperColor"
