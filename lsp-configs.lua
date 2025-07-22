@@ -8,12 +8,12 @@ lvim.builtin.which_key.mappings["l"]["f"] = {
   "Format",
 }
 
-require("lvim.lsp.manager").setup("ruff_lsp")
+require("lvim.lsp.manager").setup("ruff")
 local on_attach = function(client, bufnr)
   client.server_capabilities.hoverProvider = false
 end
 
-lspconfig.ruff_lsp.setup {
+lspconfig.ruff.setup {
   on_attach = on_attach,
 }
 
