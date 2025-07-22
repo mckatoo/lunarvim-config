@@ -77,4 +77,8 @@ vim.list_extend(lvim.plugins, {
   {
     "stevearc/dressing.nvim",
   },
+  {
+    'Exafunction/windsurf.vim',
+    event = 'BufEnter'
+  }
 })
