@@ -27,6 +27,9 @@ local function organize_imports()
 end
 
 lspconfig.tsserver.setup {
+  root_dir = function (fname)
+    return require('lspconfig.util').find_git_ancestor(fname) or vim.fn.getcwd()
+  end,
   filetypes = {
     "javascriptreact",
     "javascript",
