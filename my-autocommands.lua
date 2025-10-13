@@ -2,13 +2,6 @@
 
 lvim.autocommands = {
   {
-    "BufEnter",
-    {
-      pattern = { "*.sh" },
-      command = "setlocal ft=shellscript",
-    }
-  },
-  {
     { "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" },
     {
       command = "if mode() != 'c' | checktime | endif",
