@@ -7,7 +7,7 @@ lvim.reload_config_on_save = true
 vim.o.autoread = true
 vim.o.relativenumber = true
 vim.o.wrap = true
-vim.o.timeoutlen = 200
+vim.o.timeoutlen = 100
 vim.opt.laststatus = 3
 
 vim.opt.foldmethod = "expr"
@@ -22,7 +22,6 @@ require("custom-keys")
 require("my-plugins")
 require("my-themes")
 require("lsp-configs")
-require("codeium-config")
 require("terminal-config")
 require("lualine-config")
 require("crlf-config")
